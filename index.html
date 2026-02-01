@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valentine’s Journey 💖</title>
+<style>
+:root {
+  --bg: #1f121c;
+  --path: linear-gradient(180deg, #ff9cc9, #fd94a5, #ff758c, #ff5975);
+  --text: #f5f5f5;
+  --node1:#684141;  /* Darker Red */
+  --node2:#7b5e46;  /* Darker Orange */
+  --node3:#8b7942;  /* Darker Yellow */
+  --node4:#2b4c6a;  /* Darker Blue */
+  --node5:#443263;  /* Darker Purple */
+  --node6:#34736a;  /* Darker Mint */
+  --node7:#773e4e;  /* Darker Pink */
+  --node8:#7c4738;  /* Darker Peach */
+}
+
+* { box-sizing: border-box; margin:0; padding:0; }
+
+body {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 500px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  color: #ff7eb9;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+/* Path container */
+.path-container {
+  position: relative;
+  width: 100%;
+  padding: 40px 0;
+}
+
+/* Vertical path ending at Valentine node */
+.path {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: calc(100% - 80px); /* end at last node */
+  background: var(--path);
+  border-radius: 10px;
+}
+
+/* Nodes */
+.node {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 25px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 0 15px rgba(255,255,255,0.2);
+  font-size: 2rem;
+}
+
+.node:hover {
+  transform: scale(1.3);
+  box-shadow: 0 0 25px #ff7eb9;
+}
+
+/* Node colors */
+#rose { background: var(--node1); }
+#propose { background: var(--node2); }
+#chocolate { background: var(--node3); }
+#teddy { background: var(--node4); }
+#promise { background: var(--node5); }
+#hug { background: var(--node6); }
+#kiss { background: var(--node7); }
+#valentine { background: var(--node8); }
+
+/* Floating hearts */
+.heart {
+  position: absolute;
+  font-size: 20px;
+  color: #ff6b6b;
+  animation: floatUp 5s infinite;
+  opacity: 0.7;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0) rotate(0deg); opacity:0.7; }
+  50% { opacity:1; }
+  100% { transform: translateY(-200px) rotate(360deg); opacity:0; }
+}
+
+/* Responsive tweaks */
+@media(max-width:480px){
+  .node { width: 75px; height: 75px; font-size: 0.9rem; }
+}
+
+footer{
+  text-align:center;
+  margin:30px 0;
+  color: var(--text);
+  font-size: 0.8rem;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Our Valentine’s Journey 💖</h1>
+<p>Follow the path to celebrate each special day 🌹💌🍫🧸🤝🫂💋💘</p>
+
+<div class="path-container">
+  <div class="path"></div>
+
+  <a href="wait.html" class="node" id="rose" style="margin-top: 0%;">Rose<br>🌹</a>
+  <a href="wait.html" class="node" id="propose">Propose<br>💌</a>
+  <a href="wait.html" class="node" id="chocolate">Chocolate<br>🍫</a>
+  <a href="wait.html" class="node" id="teddy">Teddy<br>🧸</a>
+  <a href="wait.html" class="node" id="promise">Promise<br>🤝</a>
+  <a href="wait.html" class="node" id="hug">Hug<br>🫂</a>
+  <a href="wait.html" class="node" id="kiss">Kiss<br>💋</a>
+  <a href="wait.html" class="node" id="valentine" style="margin-bottom: 0%;">Valentine<br>💘</a>
+</div>
+</div>
+
+<!-- Floating hearts -->
+<div class="heart" style="left:10%; animation-delay:0s;">❤️</div>
+<div class="heart" style="left:30%; animation-delay:1s;">💖</div>
+<div class="heart" style="left:50%; animation-delay:2s;">💕</div>
+<div class="heart" style="left:70%; animation-delay:0.5s;">❤️</div>
+<div class="heart" style="left:90%; animation-delay:1.5s;">💖</div>
+
+<footer>Made with ❤️💞 for you</footer>
+</body>
+</html>
