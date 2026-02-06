@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rose Day 🌹</title>
+
+<style>
+:root {
+  --bg:#0f0f14;
+  --card:rgba(255,255,255,0.08);
+  --accent:#ff6b81;
+  --text:#f5f5f5;
+  --soft:rgba(255,255,255,0.65);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* Layout */
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 24px 16px 40px;
+}
+
+/* Card */
+.card {
+  background: var(--card);
+  border-radius: 18px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+}
+
+/* Typography */
+h1 {
+  color: var(--accent);
+  font-size: clamp(1.8rem, 5vw, 2.4rem);
+  margin-bottom: 8px;
+}
+
+h2 {
+  color: var(--accent);
+  font-size: clamp(1.3rem, 4vw, 1.7rem);
+  margin-bottom: 12px;
+}
+
+.subtitle {
+  color: var(--soft);
+  font-size: clamp(0.9rem, 3.5vw, 1rem);
+}
+
+.content p {
+  line-height: 1.8;
+  color: var(--soft);
+  font-size: clamp(0.95rem, 3.8vw, 1.05rem);
+  margin-bottom: 16px;
+}
+
+/* Roses */
+.rose-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+  gap: 16px;
+  margin: 28px 0;
+  text-align: center;
+}
+
+.rose {
+  font-size: 42px;
+  padding: 10px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+
+.rose:active {
+  transform: scale(1.35);
+}
+
+/* Meaning box */
+.meaning {
+  background: rgba(255,255,255,0.05);
+  border-radius: 14px;
+  padding: 18px;
+  min-height: 90px;
+  font-size: clamp(0.9rem, 3.5vw, 1rem);
+  color: var(--soft);
+  border-left: 4px solid var(--accent);
+}
+
+/* Quote */
+.quote {
+  margin-top: 18px;
+  font-style: italic;
+  text-align: center;
+  color: var(--text);
+  font-size: clamp(0.9rem, 3.5vw, 1rem);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  color: var(--soft);
+  font-size: 0.8rem;
+  margin-top: 32px;
+}
+
+/* Extra small screens */
+@media (max-width: 360px) {
+  .card {
+    padding: 18px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- INTRO -->
+  <div class="card">
+    <h1>Happy Rose Day Betuuuu.. 🌹</h1>
+    <p class="subtitle">
+      Roses say what words sometimes can’t. Choose one and let your feelings speak.
+    </p>
+  </div>
+
+  <!-- ROSE SELECTION -->
+  <div class="card">
+    <h2>Choose a Rose</h2>
+    <p class="subtitle">
+      Every rose color carries an emotion. Tap a rose to reveal its meaning.
+    </p>
+
+    <div class="rose-box">
+      <button class="rose" onclick="showMeaning('red')">🌹</button>
+      <button class="rose" onclick="showMeaning('yellow')">🌻</button>
+      <button class="rose" onclick="showMeaning('white')">🌼</button>
+      <button class="rose" onclick="showMeaning('pink')">🌷</button>
+    </div>
+
+    <div id="meaningBox" class="meaning">
+      🌸 Tap on a rose to see what it truly means.
+    </div>
+  </div>
+
+    <div class="card content">
+    <h2>For You 🌹</h2>
+
+    <p>
+      Tum ek gulaab jaisi ho…<br>
+      Par sach kahun, thodi dangerous bhi,<br>
+      Kyuki itni khoobsurat ho ki seedha dil pe attack kar deti ho.
+    </p>
+
+    <p>
+      Kabhi itni pyaari lagti ho ki bas dekhte rehne ka mann karta hai,<br>
+      Aur kabhi itna gussa karti ho ki lagta hai kaante hi kaante ho.
+    </p>
+
+    <p>
+      Par sach kahun,<br>
+      Gulaab bina kaanton ke itna special bhi nahi hota.
+    </p>
+
+    <p>
+      Tumhari smile mere din ki free ki sunshine hai,<br>
+      Aur tumhari baatein meri daily dose of happiness.
+    </p>
+
+    <p>
+      Isliye officially declare karta hoon—<br>
+      Tum meri zindagi ki permanent, non-refundable, cutest rose ho. 🌹😄
+    </p>
+  </div>
+
+  <!-- EMOTIONAL CONTENT -->
+  <div class="card content">
+    <h2>Why Rose Day Feels Special</h2>
+
+    <p>
+      Rose Day is about small emotions — the kind that stay unsaid but are deeply felt.
+      A rose becomes a quiet way to say “I care”.
+    </p>
+
+    <p>
+      Sometimes, giving a rose isn’t about romance. It can be about friendship,
+      gratitude, or simply making someone smile.
+    </p>
+
+    <p>
+      Whether you give it to someone special or keep it for yourself,
+      a rose is a reminder that feelings matter.
+    </p>
+
+    <div class="quote">
+      “A rose doesn’t ask to be understood — it just exists beautifully.”
+    </div>
+  </div>
+
+  <footer>
+    Made with ❤️ for Rose Day
+  </footer>
+
+</div>
+
+<script>
+function showMeaning(color) {
+  const meanings = {
+    red: "🌹 Red Rose represents deep love, passion, and heartfelt emotions.",
+    yellow: "🌻 Yellow Rose symbolizes friendship, happiness, and positive energy.",
+    white: "🌼 White Rose stands for peace, purity, and sincere intentions.",
+    pink: "🌷 Pink Rose expresses admiration, sweetness, and gentle affection."
+  };
+
+  document.getElementById("meaningBox").innerText = meanings[color];
+}
+</script>
+
+</body>
+</html>
