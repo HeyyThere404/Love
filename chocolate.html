@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chocolate Day 🍫</title>
+
+<style>
+:root {
+  --bg:#0f0f14;
+  --card:rgba(255,255,255,0.08);
+  --accent:#ff6b81;
+  --text:#f5f5f5;
+  --soft:rgba(255,255,255,0.65);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 24px 16px 40px;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 18px;
+  padding: 26px;
+  margin-bottom: 24px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+}
+
+/* Typography */
+h1 {
+  color: var(--accent);
+  font-size: clamp(1.8rem, 5vw, 2.4rem);
+  margin-bottom: 8px;
+}
+
+h2 {
+  color: var(--accent);
+  font-size: clamp(1.3rem, 4vw, 1.7rem);
+  margin-bottom: 14px;
+}
+
+.subtitle {
+  color: var(--soft);
+  font-size: clamp(0.9rem, 3.5vw, 1rem);
+}
+
+p {
+  line-height: 1.8;
+  color: var(--soft);
+  font-size: clamp(0.95rem, 3.8vw, 1.05rem);
+  margin-bottom: 14px;
+}
+
+/* Chocolate buttons */
+.choco-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 18px;
+  margin: 28px 0;
+  text-align: center;
+}
+
+.choco {
+  font-size: 38px;
+  padding: 12px;
+  border-radius: 14px;
+  border: none;
+  background: rgba(255,255,255,0.05);
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+
+.choco:active {
+  transform: scale(1.25);
+}
+
+/* Message box */
+.message {
+  margin-top: 18px;
+  padding: 18px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.05);
+  border-left: 4px solid var(--accent);
+  color: var(--soft);
+  font-size: clamp(0.9rem, 3.5vw, 1rem);
+  min-height: 70px;
+}
+
+/* Quote */
+.quote {
+  text-align: center;
+  font-style: italic;
+  color: var(--text);
+  margin-top: 18px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  color: var(--soft);
+  font-size: 0.8rem;
+  margin-top: 32px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- INTRO -->
+  <div class="card">
+    <h1>Happy Chocolate Day 🍫</h1>
+    <p class="subtitle">
+      Because some things just make life sweeter.
+    </p>
+  </div>
+
+  <!-- INTERACTION -->
+  <div class="card">
+    <h2>Pick a Chocolate</h2>
+    <p class="subtitle">
+      Each one hides a small reason why you feel like comfort to me.
+    </p>
+
+    <div class="choco-box">
+      <button class="choco" onclick="showMessage(0)">🍫</button>
+      <button class="choco" onclick="showMessage(1)">🍩</button>
+      <button class="choco" onclick="showMessage(2)">🍪</button>
+      <button class="choco" onclick="showMessage(3)">🧁</button>
+    </div>
+
+    <div id="messageBox" class="message">
+      Tap any chocolate to reveal a message 🤍
+    </div>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="card">
+    <h2>Why Chocolate Day Feels Like You</h2>
+
+    <p>
+      Chocolate isn’t about being fancy.
+      It’s about comfort — something small that makes a bad day better.
+    </p>
+
+    <p>
+      That’s what you feel like to me.
+      Easy. Warm. Familiar.
+      The kind of happiness that doesn’t need a reason.
+    </p>
+
+    <div class="quote">
+      “Some people feel like home — and that’s sweeter than anything.”
+    </div>
+  </div>
+
+  <footer>
+    Made with ❤️ for Chocolate Day
+  </footer>
+
+</div>
+
+<script>
+const messages = [
+  "🍫 You make even ordinary days feel a little sweeter.",
+  "🍩 Talking to you feels like comfort after a long day.",
+  "🍪 You have this calm way of making everything feel okay.",
+  "🧁 Being with you just feels… nice, and that’s my favorite part."
+];
+
+function showMessage(index) {
+  document.getElementById("messageBox").innerText = messages[index];
+}
+</script>
+
+</body>
+</html>
