@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Propose Day 💌</title>
+
+<style>
+:root {
+  --bg:#0f0f14;
+  --card:rgba(255,255,255,0.08);
+  --accent:#ff6b81;
+  --text:#f5f5f5;
+  --soft:rgba(255,255,255,0.65);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 24px 16px 40px;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 18px;
+  padding: 26px;
+  margin-bottom: 24px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+}
+
+/* Typography */
+h1 {
+  color: var(--accent);
+  font-size: clamp(1.8rem, 5vw, 2.4rem);
+  margin-bottom: 8px;
+}
+
+h2 {
+  color: var(--accent);
+  font-size: clamp(1.3rem, 4vw, 1.7rem);
+  margin-bottom: 14px;
+}
+
+.subtitle {
+  color: var(--soft);
+  font-size: clamp(0.9rem, 3.5vw, 1rem);
+}
+
+p {
+  line-height: 1.8;
+  color: var(--soft);
+  font-size: clamp(0.95rem, 3.8vw, 1.05rem);
+  margin-bottom: 14px;
+}
+
+/* Cute message */
+.message {
+  font-size: clamp(1rem, 4vw, 1.15rem);
+  color: var(--text);
+  margin: 22px 0;
+}
+
+/* Button */
+.love-btn {
+  width: 100%;
+  padding: 14px 20px;
+  border-radius: 30px;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.love-btn:active {
+  transform: scale(0.97);
+}
+
+/* Hidden love note */
+.love-note {
+  margin-top: 20px;
+  padding: 18px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.05);
+  border-left: 4px solid var(--accent);
+  color: var(--soft);
+  font-size: clamp(0.9rem, 3.5vw, 1rem);
+  display: none;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  color: var(--soft);
+  font-size: 0.8rem;
+  margin-top: 32px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- INTRO -->
+  <div class="card">
+    <h1>Happy Propose Day 💌</h1>
+    <p class="subtitle">
+      Just something I wanted to tell you today.
+    </p>
+  </div>
+
+  <!-- MESSAGE -->
+  <div class="card">
+    <h2>Hey you</h2>
+
+    <div class="message">
+      I know we’re already together,  
+      but I still get that little smile  
+      every time I think about us.<br><br>
+
+      So this isn’t a big proposal or anything —  
+      just me saying that I’m really happy  
+      that it’s you.
+    </div>
+
+    <button class="love-btn" onclick="showLove()">
+      Tap this 🤍
+    </button>
+
+    <div id="loveNote" class="love-note">
+      And even today, even tomorrow —  
+      I’d still choose you, without a second thought 💕
+    </div>
+  </div>
+
+  <div class="card">
+  <h2>For you</h2>
+
+  <div class="message">
+    Aaj Propose Day hai,<br>
+    Aur main ek chhota sa sawal lekar aaya hoon…<br><br>
+
+    Tumhari smile pe toh pehle hi mera dil slip ho chuka hai,<br>
+    Aur tumhari baaton ne usse permanently kidnap kar liya hai.<br>
+    Ab dil wapas bhi nahi mil raha,<br>
+    Toh socha tumhe hi officially de doon.<br><br>
+
+    Sach bolun, tumhare bina mera din<br>
+    Net ke bina phone jaisa lagta hai<br>
+    Chalta toh hai, par bilkul maza nahi aata.<br><br>
+
+    Toh madam, kya tum meri life ki<br>
+    Permanent partner in crime banogi? ❤️😄
+    <br>
+    <h2>I LOVE YOU MY BABYYY... ❤️❤️❤️</h2>
+  </div>
+</div>
+
+  <!-- SOFT CLOSING -->
+  <div class="card">
+    <h2>One more thing</h2>
+
+    <p>
+      Thank you for being my comfort,  
+      my safe place,  
+      and my favorite person.
+    </p>
+
+    <p>
+      Happy Propose Day,  
+      I’m really glad I have you 🤍
+    </p>
+  </div>
+
+  <footer>
+    Made with ❤️ for you
+  </footer>
+
+</div>
+
+<script>
+function showLove() {
+  document.getElementById("loveNote").style.display = "block";
+}
+</script>
+
+</body>
+</html>
