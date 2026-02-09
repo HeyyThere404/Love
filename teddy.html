@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teddy Day 🧸</title>
+
+<style>
+:root {
+  --bg:#0f0f14;
+  --card:rgba(255,255,255,0.08);
+  --accent:#ff6b81;
+  --text:#f5f5f5;
+  --soft:rgba(255,255,255,0.65);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 24px 16px 40px;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 18px;
+  padding: 26px;
+  margin-bottom: 24px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+}
+
+/* Text */
+h1 {
+  color: var(--accent);
+  font-size: clamp(1.8rem, 5vw, 2.4rem);
+  margin-bottom: 10px;
+}
+
+h2 {
+  color: var(--accent);
+  font-size: clamp(1.3rem, 4vw, 1.7rem);
+  margin-bottom: 14px;
+}
+
+.subtitle {
+  color: var(--soft);
+  font-size: clamp(0.9rem, 3.5vw, 1rem);
+}
+
+p {
+  line-height: 1.8;
+  color: var(--soft);
+  font-size: clamp(0.95rem, 3.8vw, 1.05rem);
+  margin-bottom: 14px;
+}
+
+/* Teddy interaction */
+.teddy-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.teddy {
+  font-size: 80px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.teddy:active {
+  transform: scale(1.2);
+}
+
+.hug-box {
+  background: rgba(255,255,255,0.05);
+  padding: 18px;
+  border-radius: 14px;
+  text-align: center;
+  color: var(--soft);
+  border-left: 4px solid var(--accent);
+  min-height: 70px;
+  width: 100%;
+  font-size: clamp(0.9rem, 3.5vw, 1rem);
+}
+
+/* Quote */
+.quote {
+  text-align: center;
+  font-style: italic;
+  color: var(--text);
+  margin-top: 18px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  color: var(--soft);
+  font-size: 0.8rem;
+  margin-top: 32px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- INTRO -->
+  <div class="card">
+    <h1>Happy Teddy Day, Meri Naughty Teddy 🧸</h1>
+    <p class="subtitle">
+      For all the hugs I wish I could give you right now.
+    </p>
+  </div>
+
+  <!-- INTERACTION -->
+  <div class="card">
+    <h2>Tap the Teddy</h2>
+    <p class="subtitle">
+      Every tap is one warm hug from me to you 🤍
+    </p>
+
+    <div class="teddy-wrap">
+      <div class="teddy" onclick="giveHug()">🧸</div>
+      <div id="hugMessage" class="hug-box">
+        Tap the teddy to receive a hug
+      </div>
+    </div>
+  </div>
+
+  <!-- TEDDY MESSAGE -->
+<div class="card">
+  <h2>For my favourite teddy</h2>
+
+  <p>
+    Aaj Teddy Day hai,<br>
+    Aur ek complaint likhwaani thi…<br>
+
+    Tum itni cute ho<br>
+    Ki normal teddy bears insecurity mein jaa rahe hain.<br><br>
+
+    Tumhari smile dekhte hi<br>
+    Dil karta hai “Aww” bolke hug kar loon,<br>
+    Aur jab thoda nakhre karti ho na,<br>
+    Toh lagta hai yeh teddy thoda naughty bhi hai.<br><br>
+
+    Sach bataun,<br>
+    Tumhare hugs mein woh magic hai<br>
+    Jo bina battery ke bhi mood full charge kar deta hai.<br><br>
+
+    Toh aaj ke din officially keh raha hoon—<br>
+    Tum meri life ki<br>
+    Sabse cute, sabse shararti<br>
+    Aur limited-edition teddy ho. 🧸❤️
+  </p>
+</div>
+
+  <!-- CONTENT -->
+  <div class="card">
+    <h2>If I Were There</h2>
+
+    <p>
+      If I were there right now, I wouldn’t say much.
+      I’d just pull you closer and let Kiss You Masttt Waala.
+    </p>
+
+    <div class="quote">
+      “Some hugs don’t need arms — just feelings.”
+    </div>
+  </div>
+
+  <footer>
+    Made with 🧸 and ❤️
+  </footer>
+
+</div>
+
+<script>
+const hugs = [
+  "🤍 This is a soft, quiet hug — the kind that makes everything slow down.",
+  "🫂 A long hug, because letting go feels illegal.",
+  "💞 A hug that says: I’m here, always.",
+  "🌙 A gentle hug for when you’re tired.",
+  "✨ A happy hug, just because you exist."
+];
+
+function giveHug() {
+  const random = Math.floor(Math.random() * hugs.length);
+  document.getElementById("hugMessage").innerText = hugs[random];
+}
+</script>
+
+</body>
+</html>
