@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hug Day 🫂</title>
+
+<style>
+:root {
+  --bg:#0f0f14;
+  --card:rgba(255,255,255,0.08);
+  --accent:#ff6b81;
+  --text:#f5f5f5;
+  --soft:rgba(255,255,255,0.65);
+  --heart:#ff6b81;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  padding: 16px;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding-bottom: 40px;
+}
+
+/* Card styling */
+.card {
+  background: var(--card);
+  border-radius: 18px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+}
+
+/* Headings */
+h1, h2 {
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+h1 { font-size: clamp(1.8rem, 6vw, 2.5rem); }
+h2 { font-size: clamp(1.3rem, 4.5vw, 2rem); }
+
+/* Subtitle */
+.subtitle {
+  color: var(--soft);
+  font-size: clamp(0.95rem, 3.5vw, 1.1rem);
+  margin-bottom: 16px;
+}
+
+/* Paragraphs */
+p, .hug-text {
+  color: var(--soft);
+  font-size: clamp(0.95rem, 3.8vw, 1.05rem);
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+
+.quote{
+  text-align: center;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0) scale(1); opacity: 0.8; }
+  50% { transform: translateY(-50px) scale(1.2); opacity: 1; }
+  100% { transform: translateY(-120px) scale(1); opacity: 0; }
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  color: var(--soft);
+  font-size: 0.8rem;
+  margin-top: 32px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .card {
+    padding: 18px;
+  }
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.6rem; }
+  p, .hug-text { font-size: 1rem; }
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+  <!-- INTRO -->
+  <div class="card">
+    <h1>Happy Hug Day 🫂</h1>
+    <p class="subtitle">
+      A hug can say what words sometimes cannot.
+    </p>
+  </div>
+
+  <!-- ROMANTIC HUG MESSAGE -->
+  <div class="card" id="hugCard">
+    <h2>For You 🤗❤️</h2>
+
+    <div class="hug-text">
+      Happy Hug Day, meri cute si shararti baby! 🫂💞<br><br>
+      Tumhe hug karne ka idea hi dil ko itna excited kar deta hai,<br>
+      jaise koi favourite chocolate mil gayi ho.<br><br>
+      Tum jab paas hoti ho na,<br>
+      bas dil karta hai seedha tumhe apni baahon mein kheench loon,<br>
+      aur thodi der ke liye duniya ko pause kar doon.<br><br>
+      Sach bataun, tumhare hugs mein kuch secret magic hai.<br>
+      Ek baar mil jaaye, toh dil aur zyada shararat karne lagta hai.<br><br>
+      Toh aaj ke din ek small warning—agar tum mil gayi,<br>
+      toh hug simple nahi hoga…<br>
+      thoda tight, thoda long, aur thoda naughty zaroor hoga. 🤗❤️
+    </div>
+  </div>
+
+    <!-- FIRST HUG MEMORY -->
+  <div class="card">
+    <h2>A Cute Memory 🤗❤️</h2>
+
+    <div class="hug-text">
+      Oyeee meri Jaan, aaj Hug Day par main bas ek chhoti si yaad share karna chahta hoon…<br><br>
+
+      Yaad hai na, woh pehla hug?<br>
+      Jhandewalan Metro Station, gate no. 4, subah ke 8 baje ke aas paas.<br>
+      Tab hum officially kuch bhi nahi the, bas do dost…<br>
+      Par jab maine tumhe first time hug kiya, waawww…<br>
+      Ek alag hi feeling thi, aur woh moment itna pyaara tha, pyaara hai, aur hamesha pyaara rahega.<br><br>
+
+      Mujhe bohot der tak hug karna tha, bohot pyaar se,<br>
+      Par first time ka soch kar thoda sa control rakha…<br>
+      Woh hug bas ek hug nahi tha,<br>
+      Woh comfort, pyaar aur emotions ka perfect combo tha.<br>
+      Woh ek chhota sa promise tha —<br>
+      Ki aage bhi aise hi pyaar, shararat aur warmth hamesha rahega.<br><br>
+
+      Aur aaj, Hug Day par main phir se ye promise karta hoon —<br>
+      Har hug tumhare liye thoda zyada cute, thoda zyada naughty, aur bohot pyaara hoga. 🤗
+    </div>
+  </div>
+
+
+  <!-- ENHANCED LOVE CONTENT -->
+  <div class="card">
+    <h2>What I Feel When I Hug You</h2>
+
+    <p>
+      When I think of hugging you, it’s more than warmth.  
+      It’s calm. It’s safety. It’s the kind of feeling that makes the world fade for a little while.
+    </p>
+
+    <p>
+      Even if I can’t be there physically, just imagining holding you close  
+      makes me smile and feel… at home.
+    </p>
+
+    <p>
+      I hope this hug, even through a screen, makes you feel loved,  
+      cherished, and a little lighter than before.
+    </p>
+
+    <p>
+      And every time we hug in real life, I want you to know  
+      it’s one of my favorite moments — quiet, simple, and perfect because it’s with you.
+    </p>
+
+    <div class="quote">
+      “Hugs speak the language of love without saying a word.”
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    Wrapped in love 🫂❤️
+  </footer>
+</div>
+
+</body>
+</html>
