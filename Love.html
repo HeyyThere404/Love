@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For You ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg:#0f0f14;
+  --card:rgba(255,255,255,0.08);
+  --accent:#ff6b81;
+  --text:#f5f5f5;
+  --soft:rgba(255,255,255,0.65);
+}
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif}
+
+body{
+  background:radial-gradient(circle at top,#1a1a24,var(--bg));
+  color:var(--text);
+  overflow-x:hidden;
+}
+
+.heart {
+  position:absolute;
+  bottom:-10%;
+  font-size:18px;
+  animation:floatUp linear infinite;
+  opacity:.7;
+}
+
+
+/* HEADER */
+header{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:2rem;
+}
+header h1{font-size:3rem;animation:fadeUp 1.2s}
+header p{margin-top:1rem;color:var(--soft);animation:fadeUp 1.6s}
+
+/* SECTION */
+section{padding:4rem 8vw}
+
+/* CARD */
+.card{
+  background:var(--card);
+  backdrop-filter:blur(14px);
+  border-radius:20px;
+  padding:2.4rem;
+  margin-bottom:3rem;
+  box-shadow:0 20px 40px rgba(0,0,0,.4);
+  opacity:0;
+  transform:translateY(40px);
+  transition:.8s;
+}
+.card.show{opacity:1;transform:none}
+.card h2{color:var(--accent);margin-bottom:1rem}
+.card p,.card li{color:var(--soft);line-height:1.8}
+ul{margin-left:1.2rem}
+
+/* 🌸 TIMELINE */
+.timeline{
+  position:relative;
+  margin-top:3rem;
+}
+.timeline::before{
+  content:'';
+  position:absolute;
+  left:50%;
+  top:0;
+  transform:translateX(-50%);
+  width:4px;
+  height:100%;
+  background:linear-gradient(to bottom,var(--accent),transparent);
+  box-shadow:0 0 15px var(--accent);
+}
+
+.timeline-item{
+  position:relative;
+  width:50%;
+  padding:1.5rem 2rem;
+  opacity:0;
+  transform:translateY(40px);
+  transition:.8s;
+}
+.timeline-item.show{opacity:1;transform:none}
+
+.timeline-item.left{left:0;text-align:right}
+.timeline-item.right{left:50%}
+
+.timeline-dot{
+  position:absolute;
+  top:30px;
+  width:22px;
+  height:22px;
+  background:var(--accent);
+  border-radius:50%;
+  box-shadow:0 0 15px rgba(255,107,129,.9);
+  animation:pulse 2s infinite;
+}
+.timeline-item.left .timeline-dot{right:-11px}
+.timeline-item.right .timeline-dot{left:-11px}
+
+.timeline-card{
+  background:rgba(255,255,255,.1);
+  border-radius:18px;
+  padding:1.4rem 1.6rem;
+  cursor:pointer;
+  transition:.3s;
+}
+.timeline-card:hover{transform:scale(1.05)}
+.timeline-card h3{color:var(--accent);margin-bottom:.4rem}
+.timeline-card p{font-size:.9rem}
+
+/* MEMORY */
+.memory-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:1.2rem;
+}
+.memory{
+  height:160px;
+  border-radius:16px;
+  background:linear-gradient(135deg,#ff6b81,#ff9472);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:600;
+  color:#000;
+}
+
+/* FOOTER */
+footer{text-align:center;padding:3rem 1rem;color:var(--soft);font-size:.85rem}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.2)}}
+
+@media(max-width:768px){
+  header h1{font-size:2.2rem}
+  section{padding:3rem 6vw}
+
+  /* timeline line centered */
+  .timeline::before{
+    left:18px;
+    width:3px;
+    background:linear-gradient(to bottom,var(--accent),transparent);
+    box-shadow:0 0 12px var(--accent);
+  }
+
+  .timeline-item{
+    width:100%;
+    left:0!important;
+    padding-left:50px;
+    margin-bottom:.01rem;
+    text-align:left;
+    transform:none;
+    opacity:1;
+  }
+
+  .timeline-dot{
+    left:7px!important;
+    right:auto;
+    width:18px;
+    height:18px;
+  }
+
+  .timeline-card{
+    background:rgba(255,255,255,0.09);
+    padding:1.2rem 1.4rem;
+    border-radius:16px;
+    box-shadow:
+      0 10px 25px rgba(0,0,0,0.45),
+      0 0 15px rgba(255,107,129,0.15);
+    transition:.3s;
+  }
+
+  .timeline-card h3{
+    font-size:1.05rem;
+    margin-bottom:.3rem;
+  }
+
+  .timeline-card h4{
+    font-size:.8rem;
+    color:rgba(255,255,255,0.5);
+    margin-bottom:.4rem;
+  }
+
+  .timeline-card p{
+    font-size:.9rem;
+    line-height:1.5;
+  }
+}
+
+
+/* 🌟 HERO LANDING */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  animation: heroFade 1.4s ease forwards;
+}
+
+.hero-title {
+  font-size: 3.2rem;
+  letter-spacing: 1px;
+}
+
+.hero-title span {
+  display: inline-block;
+  animation: heartBeat 1.8s infinite;
+}
+
+.hero-subtitle {
+  margin-top: 1rem;
+  color: var(--soft);
+  font-size: 1.05rem;
+  animation: fadeUp 2s ease forwards;
+}
+
+/* 🌈 GLOW BACKDROP */
+.glow {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255,107,129,0.35), transparent 60%);
+  filter: blur(60px);
+  animation: glowMove 10s infinite alternate;
+}
+
+/* MEMORY BUTTON */
+.memory-btn{
+  margin-top:1rem;
+  padding:.9rem 1.6rem;
+  border:none;
+  border-radius:30px;
+  background:linear-gradient(135deg,#ff6b81,#ff9472);
+  color:#000;
+  font-weight:600;
+  cursor:pointer;
+  transition:.3s;
+}
+.memory-btn:hover{
+  transform:scale(1.05);
+}
+
+/* MODAL BACKGROUND */
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:999;
+  background:radial-gradient(circle at top, rgba(255,105,135,0.15), rgba(0,0,0,0.95));
+  backdrop-filter:blur(12px);
+  animation:fadeIn .4s ease;
+}
+
+/* GLASS CONTAINER */
+.slideshow-container{
+  position:relative;
+  width:90%;
+  max-width:420px;
+  margin:18% auto;
+  padding:14px;
+  border-radius:28px;
+
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(18px);
+
+  box-shadow:
+    0 0 40px rgba(255,105,135,0.25),
+    0 25px 80px rgba(0,0,0,0.85);
+
+  animation:popUp .45s ease;
+}
+
+/* IMAGE */
+.slide{
+  display:none;
+  width:100%;
+  max-height:65vh;
+  object-fit:cover;
+  border-radius:22px;
+  transition:opacity .4s ease, transform .4s ease;
+}
+
+/* CLOSE BUTTON */
+.close{
+  position:absolute;
+  top:12px;
+  right:12px;
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  background:rgba(255,255,255,0.12);
+  color:#fff;
+  font-size:24px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  transition:.3s;
+}
+.close:hover{
+  background:rgba(255,255,255,0.25);
+  transform:rotate(90deg);
+}
+
+/* PROGRESS DOTS */
+.dots{
+  display:flex;
+  justify-content:center;
+  gap:8px;
+  margin-top:12px;
+}
+.dot{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:rgba(255,255,255,0.3);
+  transition:.3s;
+}
+.dot.active{
+  width:22px;
+  border-radius:10px;
+  background:linear-gradient(90deg,#ff6b81,#ff9472);
+}
+
+/* Featured memory image */
+.memory-cover{
+  width:100%;
+  max-width:520px;
+  margin:1.5rem auto 0;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:
+    0 15px 40px rgba(0,0,0,0.5),
+    0 0 25px rgba(255,107,129,0.25);
+}
+
+.memory-cover img{
+  width:100%;
+  height:auto;
+  display:block;
+  object-fit:cover;
+  transition:.4s;
+}
+
+.memory-cover img:hover{
+  transform:scale(1.03);
+}
+
+/* Button style */
+.memory-btn{
+  background:linear-gradient(135deg,#ff6b81,#ff9472);
+  color:#fff;
+  border:none;
+  padding:.9rem 1.8rem;
+  border-radius:30px;
+  font-size:.95rem;
+  cursor:pointer;
+  box-shadow:0 10px 25px rgba(255,107,129,.4);
+  transition:.3s;
+}
+
+.memory-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 15px 35px rgba(255,107,129,.6);
+}
+
+
+/* ANIMATIONS */
+@keyframes fadeIn{
+  from{opacity:0}
+  to{opacity:1}
+}
+@keyframes popUp{
+  from{
+    transform:translateY(50px) scale(.95);
+    opacity:0;
+  }
+  to{
+    transform:translateY(0) scale(1);
+    opacity:1;
+  }
+}
+
+/* MOBILE PERFECT SPACING */
+@media(max-width:600px){
+  .slideshow-container{
+    margin:28% auto;
+    width:92%;
+    padding:10px;
+  }
+}
+
+/* ✨ ANIMATIONS */
+@keyframes heroFade {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes glowMove {
+  from { transform: translate(-40px, -30px); }
+  to { transform: translate(40px, 30px); }
+}
+
+@keyframes heartBeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.25); }
+}
+
+@keyframes floatUp {
+  from {
+    bottom: -10%;
+    transform: translateX(0) scale(0.8);
+  }
+  to {
+    bottom: 110%;
+    transform: translateX(-20px) scale(1.2);
+    opacity: 0;
+  }
+}
+
+/* 📱 MOBILE HERO */
+@media (max-width: 600px) {
+  .hero-title { font-size: 2.4rem; }
+  .hero-subtitle { font-size: 0.95rem; }
+  .glow { width: 320px; height: 320px; }
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="hero">
+  <div class="glow"></div>
+
+  <div class="hero-content">
+    <h1 class="hero-title">Hii <span>❤️</span></h1>
+    <p class="hero-subtitle">This little corner exists only for you.</p><br>
+    <h2 style="color: #ff6b81; font-family: 'Times New Roman', Times, serif;">HAPPY VALENTINE'S DAY</h2>
+  </div>
+</header>
+
+
+<section>
+
+<div class="card">
+<h2>Why You Matter 💌</h2>
+<ul>
+<li>You make ordinary days feel lighter.</li>
+<li>You understand me even when I don’t explain well.</li>
+<li>You’re patient with my annoying jokes.</li>
+<li>You feel like comfort, even from miles away.</li>
+</ul>
+<br>
+<h2 style="margin-bottom: 0px;">I LOVE YOU !!! ❤️❤️</h2>
+</div>
+
+<div class="card">
+<h2>A Letter for You 📝</h2>
+<p>
+Ek chhoti si baat bolni thi… main kabhi-kabhi thoda stupid ho jaata hoon 🙈
+matlab zyada hi bol deta hoon, ya bina soche kuch kar deta hoon.
+Agar maine kabhi tumhe hurt kiya ho, toh uske liye proper wala sorry ❤️
+<br><br>
+Tum jab naraz hoti ho na, pehle toh thoda darr lagta hai 😅
+phir yaad aata hai ki mujhe tumhe manana bhi aata hai.
+Aur honestly, tumhe manana bhi mujhe pasand hai…
+kyunki end mein tumhari smile milti hai 💫
+<br><br>
+Mujhe ye bahut cute lagta hai ki tum khud ko kaise handle karti ho,
+kaise sab sambhal leti ho, aur phir bhi meri bakwaas jhel leti ho 🙃
+Tum strong ho, sweet ho, aur thodi si dramatic bhi…
+but perfect ho 💖
+<br><br>
+Bas itna sa bolna tha —
+tum naraz ho jao, main manaunga.
+Slowly, silly tareeke se, but hamesha 😌
+<br><br>
+I love you, with all my stupid things included ❤️  
+Don’t change. Ever.
+</p>
+</div>
+
+<div class="card">
+<h2>For You ✨</h2>
+<p>
+Tumhare saath jo pal guzre hain,<br>
+wo sirf yaadein nahi,<br>
+wo meri muskurahat ki wajah,<br>
+aur meri khamoshi ka sukoon ban gaye.<br><br>
+
+Chhoti-chhoti baatein,<br>
+bina wajah wali hansi,<br>
+wo late-night talks,<br>
+aur har baar ka “bas 5 minute aur.”<br><br>
+
+Tumhare saath waqt ka pata hi nahi chala,<br>
+har moment apni jagah khaas tha,<br>
+aur sach kahoon—<br>
+maine har ek pal ko,<br>
+dil se enjoy kiya.<br><br>
+
+Tum paas ho to sab theek lagta hai,<br>
+tum saath ho to zindagi aasaan lagti hai,<br>
+aur tumhare saath<br>
+main bas main reh pata hoon.<br><br>
+
+Ye sirf ek poem nahi,<br>
+ye mera thank you hai,<br>
+har us pal ke liye<br>
+jab tum mere saath ho kar<br>
+us pal ko khoobsurat bana deti ho. 🤍
+</p>
+<br>
+<h2 style="margin-bottom: 0px;">I LOVE YOU !!! 💘💘</h2>
+</div>
+
+<div class="card" style="padding-right: 0px;">
+<h2>Our Story 💞</h2>
+
+<div class="timeline">
+
+<div class="timeline-item right">
+<span class="timeline-dot"></span>
+<div class="timeline-card">
+<h3>First Chat 📱</h3>
+<h4>6 March 2023</h4>
+<p>Jab baat sirf baat nahi rahi.</p>
+</div>
+</div>
+
+<div class="timeline-item right">
+<span class="timeline-dot"></span>
+<div class="timeline-card">
+<h3>First Meet 👀</h3>
+<h4>29 December 2023</h4>
+<p>Thoda awkward, thoda magical.</p>
+</div>
+</div>
+
+<div class="timeline-item right">
+<span class="timeline-dot"></span>
+<div class="timeline-card">
+<h3>First Date ☕</h3>
+<h4>3 August 2024</h4>
+<p>Coffee thandi ho gayi, baatein nahi.</p>
+</div>
+</div>
+
+<div class="timeline-item right">
+<span class="timeline-dot"></span>
+<div class="timeline-card">
+<h3>First Hug 🤍</h3>
+<h4>3 August 2024</h4>
+<p>Sabse safe place.</p>
+</div>
+</div>
+
+<div class="timeline-item right">
+<span class="timeline-dot"></span>
+<div class="timeline-card">
+<h3>First Kiss 💋</h3>
+<h4>3 August 2024</h4>
+<p>Time thoda ruk gaya tha.</p>
+</div>
+</div>
+
+<div class="timeline-item right">
+<span class="timeline-dot"></span>
+<div class="timeline-card">
+<h3>Today → Valentine 💘</h3>
+<p>Still choosing you. Every day.</p>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="card">
+<h2>Our Memories 📸</h2>
+<div class="memory-cover">
+  <img src="11.png" alt="Our Memory">
+</div>
+<div class="butt" style="justify-content: center; align-items: center; display: flex;">
+<button class="memory-btn" id="openSlideshow">
+View Our Memories ❤️
+</button>
+</div>
+</div>
+
+<!-- Slideshow Modal -->
+<div id="slideshowModal" class="modal">
+  <span class="close" id="closeSlide">&times;</span>
+
+  <div class="slideshow-container">
+    <img class="slide" src="1.png">
+    <img class="slide" src="2.png">
+    <img class="slide" src="3.png">
+    <img class="slide" src="5.png">
+    <img class="slide" src="6.png">
+    <img class="slide" src="7.png">
+    <img class="slide" src="8.png">
+    <img class="slide" src="9.png">
+    <img class="slide" src="10.png">
+
+    <div class="dots"></div>
+  </div>
+</div>
+
+</section>
+
+<footer>
+Made with ❤️ — from miles away
+</footer>
+
+<script>
+const items=document.querySelectorAll('.card,.timeline-item');
+const observer=new IntersectionObserver(e=>{
+  e.forEach(i=>i.isIntersecting&&i.target.classList.add('show'))
+},{threshold:.15});
+items.forEach(i=>observer.observe(i));
+
+const slideModal=document.getElementById("slideshowModal");
+const openBtn=document.getElementById("openSlideshow");
+const closeSlide=document.getElementById("closeSlide");
+const slides=document.querySelectorAll(".slide");
+const dotsContainer=document.querySelector(".dots");
+
+let currentSlide=0;
+let startX=0,endX=0;
+
+/* create dots */
+slides.forEach((_,i)=>{
+  const dot=document.createElement("div");
+  dot.classList.add("dot");
+  dotsContainer.appendChild(dot);
+});
+
+const dots=document.querySelectorAll(".dot");
+
+function showSlide(index){
+  slides.forEach(s=>s.style.display="none");
+  dots.forEach(d=>d.classList.remove("active"));
+
+  slides[index].style.display="block";
+  dots[index].classList.add("active");
+}
+
+openBtn.onclick=()=>{
+  slideModal.style.display="block";
+  currentSlide=0;
+  showSlide(currentSlide);
+};
+
+closeSlide.onclick=()=>{
+  slideModal.style.display="none";
+};
+
+slideModal.onclick=(e)=>{
+  if(e.target===slideModal) slideModal.style.display="none";
+};
+
+/* swipe support */
+slideModal.addEventListener("touchstart",e=>{
+  startX=e.changedTouches[0].screenX;
+});
+slideModal.addEventListener("touchend",e=>{
+  endX=e.changedTouches[0].screenX;
+  handleSwipe();
+});
+
+function handleSwipe(){
+  let diff=startX-endX;
+  if(diff>50){
+    currentSlide=(currentSlide+1)%slides.length;
+  }
+  if(diff<-50){
+    currentSlide=(currentSlide-1+slides.length)%slides.length;
+  }
+  showSlide(currentSlide);
+}
+
+// Floating hearts
+const hero=document.querySelector(".hero");
+function createHeart(){
+  const heart=document.createElement("div");
+  heart.classList.add("heart");
+  heart.innerHTML="❤️";
+  heart.style.left=Math.random()*100+"%";
+  heart.style.fontSize=(12+Math.random()*20)+"px";
+  heart.style.animationDuration=(4+Math.random()*6)+"s";
+  hero.appendChild(heart);
+
+  setTimeout(()=>heart.remove(),10000);
+}
+setInterval(createHeart,500);
+</script>
+
+</body>
+</html>
